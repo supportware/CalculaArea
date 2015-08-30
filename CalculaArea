@@ -1,0 +1,140 @@
+#include <stdio.h>
+//#include <conio.h>
+#include <locale.h>
+//#include <curses.h>
+
+#define pi 3.1416
+
+main(void)
+{
+ setlocale(LC_ALL, "Portuguese");
+ 
+ int entrada;
+ 
+ double ladoQuadrado, areaQuadrado, //variáveis do quadrado
+        primeiroValorRetangulo, segundoValorRetangulo, areaRetangulo,//variáveis do retângullo
+        segundoValorParalelograma, primeiroValorParalelograma, areaParalelograma, //variáveis do paralelograma
+        baseMenorTrapezio, baseMaiorTrapezio, alturaTrapezio, areaTrapezio, //variáveis od trapézio
+        valorRaio, areaCirculo, //variáveis do círculo
+        areaTriangulo, baseTriangulo, alturaTriangulo;//variáveis do triângulo
+ 
+ do{
+     printf("\n\n\nPrograma para calcular Área de diferente figuras.\n\n");   
+     printf("Identifique o número correspondente a figura desejada para calcular sua área.\n\n");
+     printf("1 - Quadrado.\n");
+     printf("2 - Retângulo.\n");
+     printf("3 - Paralelograma.\n");
+     printf("4 - Trapézio.\n");
+     printf("5 - Círculo.\n");
+     printf("6 - Triângulo.\n");     
+     printf("7 - Para sair.\n\n"); 
+     printf("Digite o número da figura a ser calculada:");
+ 
+     scanf("%d",&entrada);
+     printf("\n");        
+        
+     switch(entrada){
+                     //case do quadrado
+                    case 1: 
+                         printf("Digite o valor de um lado dos lados do quadrado:");
+                         scanf("%lf",&ladoQuadrado);
+                         
+                         areaQuadrado = ladoQuadrado * ladoQuadrado;
+                         
+                         printf("\nÁrea do Quadrado é igual a: %lf", areaQuadrado);
+                         
+//                        getch(); //código usado para pausar tela do cmd no windows
+                        
+                    break;
+                     //case do retangulo                                   
+                    case 2: 
+                         printf("Digite o 1º valor do retângulo:");
+                         scanf("%lf",&primeiroValorRetangulo);
+                         printf("\n");      
+                          
+                         printf("Digite o 2º valor do retângulo:");
+                         scanf("%lf",&segundoValorRetangulo);
+                         printf("\n");      
+                          
+                         areaRetangulo = primeiroValorRetangulo * segundoValorRetangulo;
+                         
+                         printf("\nÁrea do retângulo é igual a: %lf", areaRetangulo);
+                         
+  //                      getch(); //código usado para pausar tela do cmd no windows
+                        
+                    break;
+                    
+                     //case do paralelograma                    
+                    case 3: 
+                         printf("Digite o 1º valor do Paralelograma:");
+                         scanf("%lf",&primeiroValorParalelograma);
+                         printf("\n");      
+                          
+                         printf("Digite o 2º valor do Paralelograma:");
+                         scanf("%lf",&segundoValorParalelograma);
+                         printf("\n");      
+                          
+                         areaParalelograma = primeiroValorParalelograma * segundoValorParalelograma;
+                         
+                         printf("\nÁrea do Paralelograma é igual a: %lf", areaParalelograma);
+                         
+    //                    getch(); //código usado para pausar tela do cmd no windows
+                        
+                    break;
+                    
+                     //case do trapézio                    
+                    case 4: 
+                         printf("Digite a base menor do trapézio:");
+                         scanf("%lf",&baseMenorTrapezio);
+                         printf("\n");      
+                          
+                         printf("Digite a base maior do trapézio:");
+                         scanf("%lf",&baseMaiorTrapezio);
+                         printf("\n");      
+
+                         printf("Digite a altura do trapézio:");
+                         scanf("%lf",&alturaTrapezio);
+                         printf("\n");                             
+                         
+                         areaTrapezio = (alturaTrapezio * (baseMaiorTrapezio + baseMenorTrapezio))/2;
+                         
+                         printf("\nÁrea do Trapézio é igual a: %lf", areaTrapezio);
+                         
+      //                  getch(); //código usado para pausar tela do cmd no windows
+                        
+                    break;
+
+                     //case do Círculo                   
+                    case 5: 
+                         printf("Digite o valor do Raio:");
+                         scanf("%lf",&valorRaio);
+                         printf("\n");          
+                         
+                         areaCirculo = pi * (valorRaio * valorRaio);
+                         
+                         printf("\nÁrea do Círculo é igual a: %lf", areaCirculo );
+                         
+ //                       getch(); //código usado para pausar tela do cmd no windows
+                        //       valorRaio, areaCirculo //variáveis do círculo
+                    break;
+
+		    //case do Triângulo
+		    case 6:
+			printf("Digite o valor da base do triângulo:");
+			scanf("%lf",&baseTriangulo);
+			printf("\n");
+
+			printf("Digite o valor da altura do Triângulo:");
+			scanf("%lf",&alturaTriangulo);
+			printf("\n");
+
+
+			areaTriangulo = (alturaTriangulo * baseTriangulo)/2;
+
+			printf("\nÁrea do Triângulo é igual a: %lf",areaTriangulo);
+			printf("m².");
+
+		    break;
+     }
+ }while(entrada != 7);
+}
